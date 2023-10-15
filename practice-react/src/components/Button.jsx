@@ -30,17 +30,20 @@ function Counter() {
 
       return (
         <div className="Display">
-                <h1 className="word">DOG PIC LOL</h1>
+                <h1 className="word">NSFW!</h1>
             <div className="header">
                 <img className="size" src={url}></img>
             </div>
 
         <div className="buttons">
-            <button className="botton" onClick={fetchData}> Click for a pic!
-            </button>
+                <button className="botton" onClick={fetchData}> Click for a pic!
+                </button>
 
-            <button className="botton2" onClick={() => setCount(count+ 1)}> Fap
-            </button>
+                <button className="botton3" onClick={fetchData}> Change filters
+                </button>
+
+                <button className="botton2" onClick={() => setCount(count+ 1)}> Fap
+                </button>
         </div>    
 
         <div className="">
