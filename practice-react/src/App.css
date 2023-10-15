@@ -1,8 +1,28 @@
 body {
   display: flex;
-  width: auto;
+  width: 100%; /* Use 100% width for responsiveness */
   height: 100vh;
   justify-content: center;
   align-items: center;
+  margin: 0; /* Remove default margin for body */
 }
 
+.maindiv {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 100%; /* Use max-width for responsiveness */
+  padding: 1rem; /* Add padding for spacing */
+}
+
+@media (max-width: 768px) {
+  .maindiv {
+    width: 100%; /* Adjust width to take full available width */
+  }
+}
+
+@media (max-width: 430px) {
+  .maindiv {
+    flex-direction: column; /* Stack items vertically for smaller screens */
+    height: auto; /* Allow content to determine height */
+  }
+}

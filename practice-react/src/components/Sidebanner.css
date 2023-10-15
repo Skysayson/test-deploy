@@ -1,0 +1,14 @@
+.bannerDiv {
+    display: flex;
+    align-items: center;
+    margin-right: 20rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.bannerText {
+    display: flex;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: Source Code Pro;
+}

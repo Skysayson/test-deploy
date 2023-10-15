@@ -5,6 +5,10 @@ import './Button.css';
 function Counter() {
     const [url, setUrl] = useState("");
     const [count, setCount] = useState(0);
+    const [streak, setStreak] = useState("");
+    const [flag, setFlag] = useState("");
+    const [flagNum, setFlagNum] = useState(0);
+    const streakMsg = "YOU'RE A CUMGOD!";
 
     const fetchData = () => {
         const apiURL = 'https://api.waifu.im/search';
@@ -28,28 +32,46 @@ function Counter() {
         });
     }
 
+    const showStreak = (count) => {
+        if(count % 10 === 0) {
+            setStreak(streakMsg);
+            setFlagNum(flagNum + 1);
+            setFlag(`x ${flagNum + 1}`);
+        } else {
+            setStreak("");
+            setFlag("");
+        }
+    }
+
+        console.log(flagNum);
+
       return (
         <div className="Display">
-                <h1 className="word">NSFW!</h1>
+                <h1 className="word">~NSFW~</h1>
             <div className="header">
                 <img className="size" src={url}></img>
             </div>
 
         <div className="buttons">
-                <button className="botton" onClick={fetchData}> Click for a pic!
-                </button>
+            <button className="botton" onClick={fetchData}> Click for a pic!
+            </button>
 
-                <button className="botton3" onClick={fetchData}> Change filters
-                </button>
-
-                <button className="botton2" onClick={() => setCount(count+ 1)}> Fap
-                </button>
+            <button className="botton3" onClick={fetchData}> Change filters
+            </button>
         </div>    
-
-        <div className="">
-            <h4>Fap Counter {count}</h4>
-        </div>
-        
+            <div className="fapButton">
+                <button type="button" className="botton2" onClick={() => {
+                    setCount(count + 1); 
+                    showStreak(count + 1);   
+                }}> 
+                    Fap
+                </button>
+                <h4 className="text">Fap Counter {count}</h4>
+            </div>
+            <p className="text2">
+                {streak} {flag}
+            </p>
+                 
         </div>
       )
     }
