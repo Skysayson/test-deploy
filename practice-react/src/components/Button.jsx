@@ -36,7 +36,7 @@ function Counter() {
             </div>
 
         <div className="buttons">
-            <button className="botton" onClick={fetchData}> Set pic
+            <button className="botton" onClick={fetchData}> Click for a pic!
             </button>
 
             <button className="botton2" onClick={() => setCount(count+ 1)}> Fap
