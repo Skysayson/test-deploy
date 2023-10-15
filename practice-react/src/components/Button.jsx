@@ -4,6 +4,7 @@ import './Button.css';
 
 function Counter() {
     const [url, setUrl] = useState("");
+    const [count, setCount] = useState(0);
 
     const fetchData = () => {
         const apiURL = 'https://api.waifu.im/search';
@@ -34,8 +35,18 @@ function Counter() {
                 <img className="size" src={url}></img>
             </div>
 
+        <div className="buttons">
             <button className="botton" onClick={fetchData}> Set pic
             </button>
+
+            <button className="botton2" onClick={() => setCount(count+ 1)}> Fap
+            </button>
+        </div>    
+
+        <div className="">
+            <h4>Fap Counter {count}</h4>
+        </div>
+        
         </div>
       )
     }
